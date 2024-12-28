@@ -14,3 +14,10 @@ This project implements a **Netflix Recommendation System** that provides person
 - **Scikit-learn**: Machine learning algorithms for building the recommendation model.
 - **Flask**: (Optional) For deploying the recommendation system as a web app.
 - **HTML/CSS/JavaScript**: For the front-end (if applicable for your web interface).
+
+## Screenshot
+
+Here’s a screenshot of the recommendation system interface:
+
+![Screenshot of the recommendation system](static/images/Screenshot1.png)
+![Screenshot of the recommendation system](static/images/Screenshot2.png)
