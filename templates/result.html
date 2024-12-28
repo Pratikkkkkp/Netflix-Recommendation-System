@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personalized recommendations based on your input"
+    />
+    <title>Recommendations</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheets/result.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h1>Here are your recommendations...</h1>
+      {% if tables %} {% for table in tables %}
+      <h2>{{ titles[loop.index] }}</h2>
+      {{ table|safe }} {% endfor %} {% else %}
+      <p>No recommendations available at this time.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
