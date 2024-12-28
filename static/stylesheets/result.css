@@ -11,9 +11,11 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     to bottom,
-    #141414,
-    #e50914
-  ); /* Netflix-inspired gradient */
+    #141414 10%,
+    /* Dark top color extends lower */ #2b2b2b 25%,
+    /* Intermediate darker shade for smooth blending */ #e50914 100%
+      /* Netflix red starts blending from this point */
+  ); /* Smooth Netflix-inspired gradient */
   background-size: cover;
   overflow: hidden; /* Hide any extra scrolling */
 }
@@ -29,21 +31,17 @@ a:hover {
 
 /* Page Wrapper */
 .page {
+  margin-top: 20px;
   max-width: 1200px;
-  padding: 30px;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.75
-  ); /* Semi-transparent dark background for contrast */
+  padding: 20px; /* Reduced padding for smaller height */
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 15px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
   width: 90%;
-  text-align: left; /* Ensure text is left-aligned */
+  text-align: left;
   animation: fadeInUp 1.5s ease-in-out, slideUp 1.5s ease-in-out;
-  flex-grow: 1; /* Allow the page to expand and fill available space */
-  overflow: auto; /* Ensure scrollable content if necessary */
+  flex-grow: 1;
+  overflow: auto;
 }
 
 /* Title (h1) Styling */
@@ -59,14 +57,9 @@ h1 {
 
 /* Table container styling */
 .table-container {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Slight transparency to blend with the background */
+  margin-top: 20px; /* Reduced top margin */
+  padding: 15px; /* Reduced padding inside the table container */
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   overflow-x: auto;
@@ -79,7 +72,7 @@ table.dataframe {
   border-collapse: collapse;
   text-align: center;
   font-size: 1em;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   background-color: rgba(
     255,
     255,
