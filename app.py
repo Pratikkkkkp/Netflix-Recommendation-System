@@ -39,3 +39,19 @@ cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
 netflix_data=netflix_data.reset_index()
 indices = pd.Series(netflix_data.index, index=netflix_data['title'])
 #get_recommendations('PK', cosine_sim2)
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html') 
+
+@app.route('/about',methods=['POST'])
+def getvalue():
+    moviename = request.form['moviename']
+    get_recommendations(moviename,cosine_sim2)
+    df=result
+    return render_template('result.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+if __name__ == '__main__':
+    app.run(debug=False)
