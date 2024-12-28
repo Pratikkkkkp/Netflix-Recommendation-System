@@ -18,13 +18,19 @@
     />
   </head>
   <body>
-    <div style="text-align: center">
+    <div class="page">
       <h1>Here are your recommendations...</h1>
       {% if tables %} {% for table in tables %}
       <h2>{{ titles[loop.index] }}</h2>
-      {{ table|safe }} {% endfor %} {% else %}
-      <p>No recommendations available at this time.<a href="/">Go back</a></p>
+      <div class="table-container">{{ table|safe }}</div>
+      {% endfor %} {% else %}
+      <p>No recommendations available at this time.</p>
       {% endif %}
+    </div>
+
+    <!-- Always visible Go Back Button -->
+    <div class="go-back-container">
+      <a href="/" class="btn-go-back">Go back</a>
     </div>
   </body>
 </html>

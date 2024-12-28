@@ -2,140 +2,139 @@
 body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   margin: 0;
-  padding: 0 15px;
-  background-color: #f4f4f4;
-  color: #333;
+  padding: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #141414,
+    #e50914
+  ); /* Netflix-inspired gradient */
+  background-size: cover;
 }
 
-a,
-h1,
-h2 {
-  color: #377ba8;
+a {
+  color: #e50914;
   text-decoration: none;
 }
 
-h1,
-h2 {
-  margin: 0;
-}
-
-h1 {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 15px;
-  margin-top: 30px;
-  text-align: center; /* This centers the title */
-  font-size: 2em;
-  color: #2c3e50;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  font-size: 1.4em;
-  color: #34495e;
-  margin-top: 20px;
-  text-align: center; /* This centers the subtitle */
+a:hover {
+  color: #fff;
 }
 
 /* Page Wrapper */
 .page {
-  margin: 20px auto;
   max-width: 1200px;
   padding: 30px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.75
+  ); /* Semi-transparent dark background for contrast */
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  text-align: left; /* Ensure text is left-aligned */
+  animation: fadeInUp 1.5s ease-in-out, slideUp 1.5s ease-in-out;
+}
+
+/* Title (h1) Styling */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Slight shadow for readability */
+  text-align: left;
+  margin-left: 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Table container styling */
+.table-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight transparency to blend with the background */
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
-  text-align: center; /* Ensures all content inside the page wrapper is centered */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-in-out forwards 0.5s;
 }
 
-.page:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Table Styles */
 table.dataframe {
   width: 100%;
   border-collapse: collapse;
-  text-align: center; /* Centers the content inside table */
-  font-size: 1.1em;
-  margin-top: 20px;
+  text-align: center;
+  font-size: 1em;
   margin-bottom: 40px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Match table's background with page */
   border-radius: 12px;
-  overflow: hidden;
-  display: block;
-  overflow-x: auto;
-  animation: fadeInUp 1s ease-in-out;
+  animation: slideUp 1.5s ease-in-out;
 }
 
 .dataframe th,
 .dataframe td {
   border: none;
   border-bottom: 1px solid #c8c8c8;
-  padding: 15px;
-  font-weight: 500;
+  padding: 12px;
 }
 
 tr:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: rgba(0, 0, 0, 0.2); /* Dark rows */
 }
 
 tr:nth-child(even) {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.15); /* Even darker rows */
 }
 
 tr:hover {
-  background-color: #ffe680;
+  background-color: #e50914; /* Highlight row in Netflix red on hover */
   transition: background-color 0.3s ease;
 }
 
-/* Button Styles */
-button {
-  padding: 12px 25px;
-  background-color: #377ba8;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: block;
-  margin: 30px auto; /* Centers the button */
+/* Go back Button */
+.go-back-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1; /* Ensure opacity is 1 so it's visible */
+  animation: fadeInUp 1.5s ease-in-out forwards 1s;
 }
 
-button:hover {
-  background-color: #285c7a;
+.btn-go-back {
+  background-color: #e50914; /* Netflix red */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-go-back:hover {
+  background-color: #b20710; /* Darker red for hover effect */
   transform: scale(1.05);
 }
 
-button:active {
-  transform: scale(0.95);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.8em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
-
-  table.dataframe {
-    font-size: 1em;
-  }
-
-  .page {
-    padding: 15px;
-  }
-
-  button {
-    font-size: 1em;
-    padding: 10px 20px;
-  }
+.btn-go-back:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
 }
 
 /* Keyframe Animations */
@@ -147,5 +146,44 @@ button:active {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  table.dataframe {
+    font-size: 0.9em;
+  }
+
+  .page {
+    padding: 15px;
   }
 }
