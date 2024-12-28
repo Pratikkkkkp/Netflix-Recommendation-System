@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0 15px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a,
+h1,
+h2 {
+  color: #377ba8;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  text-align: center; /* This centers the title */
+  font-size: 2em;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #34495e;
+  margin-top: 20px;
+  text-align: center; /* This centers the subtitle */
+}
+
+/* Page Wrapper */
+.page {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  text-align: center; /* Ensures all content inside the page wrapper is centered */
+}
+
+.page:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Styles */
+table.dataframe {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; /* Centers the content inside table */
+  font-size: 1.1em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.dataframe th,
+.dataframe td {
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 15px;
+  font-weight: 500;
+}
+
+tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tr:hover {
+  background-color: #ffe680;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Styles */
+button {
+  padding: 12px 25px;
+  background-color: #377ba8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+  margin: 30px auto; /* Centers the button */
+}
+
+button:hover {
+  background-color: #285c7a;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  table.dataframe {
+    font-size: 1em;
+  }
+
+  .page {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

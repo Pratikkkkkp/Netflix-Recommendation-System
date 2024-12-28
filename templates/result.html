@@ -23,7 +23,7 @@
       {% if tables %} {% for table in tables %}
       <h2>{{ titles[loop.index] }}</h2>
       {{ table|safe }} {% endfor %} {% else %}
-      <p>No recommendations available at this time.</p>
+      <p>No recommendations available at this time.<a href="/">Go back</a></p>
       {% endif %}
     </div>
   </body>

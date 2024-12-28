@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("/static/images/nrc.png") no-repeat center top;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center top 10%; /* Move the background image down by 10% */
+}
+
+/* Overlay for better text visibility */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: -1;
+}
+
+/* Page Wrapper */
+.page {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px); /* optional blur effect for better contrast */
+}
+
+.page:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Button Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 15px 25px; /* Increased padding for larger input field and button */
+  font-size: 1.2em; /* Larger font size */
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 80%; /* Make the input take up more width */
+  max-width: 500px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Lighter background for input fields */
+}
+
+input[type="submit"] {
+  background-color: #377ba8;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  width: auto; /* Allow button to size itself based on content */
+  margin-top: 20px; /* Space above the submit button */
+}
+
+input[type="submit"]:hover {
+  background-color: #285c7a;
+  transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+/* Heading and Text */
+a,
+h1,
+h2 {
+  color: #377ba8;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  input[type="text"],
+  input[type="submit"] {
+    font-size: 1em; /* Slightly smaller on mobile */
+    padding: 12px 20px; /* Adjust padding for smaller screens */
+    width: 90%; /* Make the input field even more responsive */
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
